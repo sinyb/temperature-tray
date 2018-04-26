@@ -20,9 +20,9 @@ Install:
   - (optional) copy tray2.py into some bin/ directory (like: /usr/local/bin)
   - make tray2.py auto-start in your desktop config (for KDE: System Settings -> Startup&Shutdown -> Autostart -> Add Program)
 
-Log off then log on again
+Log off then log on again, or manualy run tray2.py to see if you get good results.
 
 Chanegelog:
 0.1 initial release, most of the config must be done manualy inside program
-
+0.2 write some docs :)
 
