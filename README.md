@@ -9,6 +9,7 @@ Requirements:
 - inkscape (to create any missing numbers)
 
 Install:
+- git pull https://github.com/sinyb/temperature-tray temperature-tray/
 - modify tray2.py:
   - find "/home/sinisa" and replace that with your home dir
   - find your sensors in "/sys/devices/" and change where appropriate
