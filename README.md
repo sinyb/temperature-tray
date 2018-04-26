@@ -14,8 +14,8 @@ Install:
 - modify tray2.py:
   - find "/home/sinisa" and replace that with your home dir
   - find your sensors in "/sys/devices/" and change where appropriate 
-     I used "find /sys -name temp*", then picked 2 of them
-     also used "find /sys -name BAT*", then found which file contains charge info
+     - I used "find /sys -name temp*", then picked 2 of them
+     - also used "find /sys -name BAT*", then found which file contains charge info
   - also change scaling factor on the same lines
   - (optional) copy tray2.py into some bin/ directory (like: /usr/local/bin)
   - make tray2.py auto-start in your desktop config (for KDE: System Settings -> Startup&Shutdown -> Autostart -> Add Program)
