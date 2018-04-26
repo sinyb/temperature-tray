@@ -10,6 +10,7 @@ Requirements:
 
 Install:
 - git pull https://github.com/sinyb/temperature-tray temperature-tray/
+- copy .tray directory to your home dir
 - modify tray2.py:
   - find "/home/sinisa" and replace that with your home dir
   - find your sensors in "/sys/devices/" and change where appropriate
