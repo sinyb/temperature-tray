@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 
 import gi
 gi.require_version('Gtk', '3.0')
@@ -75,6 +75,23 @@ indicator1 = appindicator.Indicator.new(APPINDICATOR_ID1, "", appindicator.Indic
 indicator2 = appindicator.Indicator.new(APPINDICATOR_ID2, "", appindicator.IndicatorCategory.SYSTEM_SERVICES)
 indicator3 = appindicator.Indicator.new(APPINDICATOR_ID3, "", appindicator.IndicatorCategory.SYSTEM_SERVICES)
 
+if os.path.exists('/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp3_input'):
+    TEMP1 = '/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input'
+    TEMP2 = '/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp3_input'
+
+if os.path.exists('/sys/devices/platform/coretemp.1/hwmon/hwmon0/temp3_input'):
+    TEMP1 = '/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input'
+    TEMP2 = '/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp3_input'
+
+if os.path.exists('/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp3_input'):
+    TEMP1 = '/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input'
+    TEMP2 = '/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp3_input'
+
+if os.path.exists('/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp3_input'):
+    TEMP1 = '/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input'
+    TEMP2 = '/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp3_input'
+
+
 
 def worker(INDICATOR,COLOR,FILE,SCALE):
       TEMPfile = open(FILE,'r')
@@ -93,16 +110,14 @@ def worker(INDICATOR,COLOR,FILE,SCALE):
 #        print(PNG + ' exists.')
       INDICATOR.set_icon_full(PNG,TEMP)
 
-
-
 def loop1():
     while True:
-      worker(indicator1,'red','/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input',1000)
+      worker(indicator1,'red',TEMP1,1000)
       time.sleep(5)
 
 def loop2():
     while True:
-      worker(indicator2,'green','/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input',1000)
+      worker(indicator2,'green',TEMP2,1000)
       time.sleep(5)
 
 def loop3():
