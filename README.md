@@ -23,7 +23,10 @@ Install:
 Log off then log on again, or manualy run tray2.py to see if you get good results.
 
 Chanegelog:
+
 0.1 initial release, most of the config must be done manualy inside program
+
 0.2 write some docs :)
+
 0.3 add (kind of) detection of temperature files, because they keep changing with kernel versions
 
